@@ -86,8 +86,15 @@ class CreateInfoCommand extends Command{
 
 		$fontOptions = $generator->getFont()->getOptions();
 
-		$html = '<!doctype html>
-			<html>
+		$html = '<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+			<html lang="de"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+			<meta name="CREATED" content="0;0">
+			<meta name="CHANGEDBY" content="Updated by FlorinCB aka orynider@gmail.com">
+			<meta name="CHANGED" content="' . new \DateTime . '">
+			<meta name="viewport" content="width=device-width; initial-scale=1.0; minimum-scale=1.0; maximum-scale=2.0">
+			<meta name="apple-mobile-web-app-capable" content="yes">
+			<meta name="apple-mobile-web-app-status-bar-style" content="blue">
+			<meta name="GENERATOR" content="Icon Font Generator Comand Line Interface (CLI) by Martin Auswöger <martin@madeyourday.co>">
 			<head>
 			<title>'.htmlspecialchars($fontOptions['id']).'</title>
 			<style>
@@ -95,6 +102,7 @@ class CreateInfoCommand extends Command{
 					font-family: "'.$fontOptions['id'].'";
 					src: url("'.$fontFile.'") format("svg"),
 					     url("'.substr($fontFile, 0, -4).'.woff") format("woff"),
+					     url("'.substr($fontFile, 0, -4).'.woff2") format("woff2"),
 					     url("'.substr($fontFile, 0, -4).'.ttf") format("truetype");
 					font-weight: normal;
 					font-style: normal;
